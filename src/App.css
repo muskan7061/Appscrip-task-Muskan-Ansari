@@ -1,0 +1,54 @@
+.app {
+    display: flex;
+    flex-direction: column;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.sidebar {
+    width: 100%;
+    background-color: #333;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.productsContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+}
+
+.card {
+    width: 100%;
+    margin: 10px 0;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) {
+    .content-wrapper {
+        flex-direction: row;
+    }
+
+    .sidebar {
+        width: 20%;
+    }
+
+    .productsContainer {
+        display: flex;
+        flex-wrap: wrap;
+        width: 75%;
+        justify-content: space-around;
+    }
+
+    .card {
+        width: 30%;
+        margin: 15px;
+    }
+}
