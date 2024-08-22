@@ -20,14 +20,14 @@ function footer() {
             <p>customercare@mettamuse.com</p>
             <h3>CURRENCY</h3>
         <div className="use-img">
-            <img src="/images/usd.png" alt="usa-img" />
-       <ul>
-        <li>
-            USD
-        </li>
-       </ul>
-
+        <img src="/images/usd.png" alt="usa-img" />
+            <ul>
+                <li>
+                    USD
+                </li>
+            </ul>
         </div>
+
             <p>Transactions will be completed in Euros and a currency reference is available on hover.</p>
         </div>
     </div>
@@ -61,8 +61,7 @@ function footer() {
                 <img src="./images/Insta.png" alt="" />
             </div>
 
-            <h3>mettā muse ACCEPTS</h3>
-
+            <h2>mettā muse ACCEPTS</h2>
             <div className="payment-methods">
                 <img src="./images/gpay.png" alt="" />
                 <img src="./images/mastercard.png" alt="" />
