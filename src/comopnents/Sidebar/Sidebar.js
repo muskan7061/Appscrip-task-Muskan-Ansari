@@ -17,11 +17,12 @@ const Sidebar =  ({products , setProducts}) => {
             filters[filterKey].includes(product.category)
           );
         }
-      }, [products]);
+      }, []);
 
       setProducts(filteredProducts);
+      
     }
-  }, [filters, setProducts]);
+  }, [filters, setProducts, products]);
 
   const filterConfig = [
     {
