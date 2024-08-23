@@ -10,23 +10,24 @@ function App() {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
+        console.log("useEffect run")
         fetch("https://fakestoreapi.com/products")
             .then((response) => response.json())
             .then((data) => setProducts(data))
             .catch((error) => console.error("Error fetching data:", error));
-    }, []);
+    }, [products]);
 
   return (
       <div className="app">
           <Navbar />
           <Discover />
           <div className="content-wrapper">
-              <Sidebar products={products} setProducts={setProducts} /> 
-              <Product products={products} />
+          {products && <Sidebar products={products} setProducts={setProducts} /> }
+              {products && <Product products={products} />}
           </div>
           <Footer />
       </div>
   );
 }
 
-export default App;
+export default App;
