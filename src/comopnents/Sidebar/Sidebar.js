@@ -5,6 +5,24 @@ const Sidebar =  ({products , setProducts}) => {
   const [filters, setFilters] = useState({});
   console.log("🚀 ~ filters:", filters);
 
+  useEffect(() => {
+    if (Object.keys(filters).length === 0) {
+    } else {
+   
+      let filteredProducts =  products;
+
+      Object.keys(filters).forEach((filterKey) => {
+        if (filters[filterKey].length > 0) {
+          filteredProducts = filteredProducts.filter((product) =>
+            filters[filterKey].includes(product.category)
+          );
+        }
+      }, [products]);
+
+      setProducts(filteredProducts);
+    }
+  }, [filters, setProducts]);
+
   const filterConfig = [
     {
       filterHeading: "CLOTHINGS",
@@ -45,23 +63,7 @@ const Sidebar =  ({products , setProducts}) => {
       }
     });
   };
-  useEffect(() => {
-    if (Object.keys(filters).length === 0) {
-    } else {
-   
-      let filteredProducts =  products;
 
-      Object.keys(filters).forEach((filterKey) => {
-        if (filters[filterKey].length > 0) {
-          filteredProducts = filteredProducts.filter((product) =>
-            filters[filterKey].includes(product.category)
-          );
-        }
-      });
-
-      setProducts(filteredProducts);
-    }
-  }, [filters, setProducts]);
   return (
     <div className="filter-section">
       <h3>Filter by:</h3>
